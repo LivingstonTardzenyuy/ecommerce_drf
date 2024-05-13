@@ -3,10 +3,18 @@
 import os
 import sys
 
+from drf_ecommerce.settings import base 
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'drf_ecommerce.settings')
+    
+    #Allowes use to run our app in multiple environments wether in developer mode or in production
+    if base.DEBUG:
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'drf_ecommerce.settings.local')
+    else:
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'drf_ecommerce.settings.production')
+        
+        
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

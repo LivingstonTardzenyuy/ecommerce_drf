@@ -30,7 +30,6 @@ class ProductLine(models.Model):
     product = models.ManyToManyField(AttributValue)
     product_fk = models.ForeignKey(Product, on_delete=models.CASCADE)
 
-
 class Category(models.Model):
     name = models.CharField(max_length=255)
     product = models.ManyToManyField(Product)

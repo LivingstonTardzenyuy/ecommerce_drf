@@ -17,10 +17,10 @@ class Brand(models.Model):
     name = models.CharField(max_length=255)
 
 
-
+#The parent class model
 class Category(MPTTModel):
     name = models.CharField(max_length=255)
-    parent = TreeForeignKey("self", on_delete= models.PROTECT, null = True, blank = True)
+    parent = TreeForeignKey("self", on_delete= models.PROTECT, null = True, blank = True)   # Protect helps us to delete the child then the parent
 
     class MPTTMeta:
         order_insertion_by =['name']
@@ -29,7 +29,7 @@ class Category(MPTTModel):
         return self.name
 
 
-
+#the child class model
 class Product(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True)

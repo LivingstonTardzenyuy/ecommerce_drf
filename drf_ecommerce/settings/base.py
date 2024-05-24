@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # External apps
     "rest_framework",
-    "drf-spectacular",
+    "drf_spectacular",
     # internal apps
     "products",
 ]
@@ -126,7 +126,9 @@ REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
-#Spectacular meta data
+# Spectacular meta data
 SPECTCULAR_SETTINGS = {
     "Title": "Django DRF Ecommerce",
+    'DESCRIPTION': 'Ecommerce website',
+
 }

@@ -130,5 +130,6 @@ REST_FRAMEWORK = {
 SPECTCULAR_SETTINGS = {
     "Title": "Django DRF Ecommerce",
     'DESCRIPTION': 'Ecommerce website',
-
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
 }

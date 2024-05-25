@@ -50,3 +50,17 @@ class BrandView(viewsets.ViewSet):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+class ProductView(viewsets.ViewSet):
+    """_summary_
+    Simple Viewsets for viewing all Products
+    """
+    
+    queryset = Product.objects.all()
+    
+    @extend_schema(responses=ProductSerializer)
+    def list(self, request):
+        serializer = ProductSerializer(self.queryset, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

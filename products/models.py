@@ -7,14 +7,15 @@ class Attribute(models.Model):
 
 
 class AttributValue(models.Model):
-    value = models.CharField(max_length=255)
+    value = models.CharField(max_length=205)
     attribute = models.ForeignKey(
         Attribute, on_delete=models.CASCADE, related_name="attribute"
     )
 
 
 class Brand(models.Model):
-    name = models.CharField(max_length=255)
+  
+    name = models.CharField(max_length=205)
 
 
 #The parent class model
